@@ -16,7 +16,7 @@ export default function CTASection() {
   ];
 
   return (
-    <section className="py-20 lg:py-32 bg-[#e8e8e8] relative overflow-hidden">
+    <section className="py-12 lg:py-20 bg-[#e8e8e8] relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
 
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -54,7 +54,7 @@ export default function CTASection() {
               <a
                 key={i}
                 href={item.href}
-                className="flex flex-col items-center gap-3 p-6 bg-white border border-[#dcdcdc] rounded-xl hover:border-[#cfcfcf] transition-all duration-300 group"
+                className="flex flex-col items-center gap-3 p-6 bg-white border border-[#dcdcdc] rounded-xl hover:border-[#cfcfcf] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="w-12 h-12 bg-[#f2f2f2] rounded-full flex items-center justify-center text-[#1a1a1a] group-hover:bg-[#eaeaea] transition-colors">
                   {item.icon}
@@ -75,6 +75,8 @@ export default function CTASection() {
     </section>
   );
 }
+
+
 
 
 

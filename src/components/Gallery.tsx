@@ -7,7 +7,7 @@ export default function Gallery() {
   const { t } = useLang();
 
   return (
-    <section className="py-20 lg:py-32 bg-[#e8e8e8] relative">
+    <section className="py-12 lg:py-20 bg-[#e8e8e8] relative">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
@@ -30,7 +30,7 @@ export default function Gallery() {
           {images.map((src, i) => (
             <figure
               key={i}
-              className={`mb-4 break-inside-avoid overflow-hidden rounded-xl border border-[#dcdcdc] group ${
+              className={`mb-4 break-inside-avoid overflow-hidden rounded-xl border border-[#dcdcdc] group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 50}ms` }}
@@ -48,5 +48,7 @@ export default function Gallery() {
     </section>
   );
 }
+
+
 
 

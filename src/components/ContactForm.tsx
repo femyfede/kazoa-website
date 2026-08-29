@@ -59,7 +59,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="wasiliana" className="py-20 lg:py-32 bg-[#e8e8e8] relative">
+      <section id="wasiliana" className="py-12 lg:py-20 bg-[#e8e8e8] relative">
         <div className="absolute inset-0 bg-grid opacity-10" />
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-white border border-[#cfcfcf] rounded-2xl p-12 text-center">
@@ -81,7 +81,7 @@ export default function ContactForm() {
   const types = lang === "en" ? projectTypesEn : projectTypesSw;
 
   return (
-    <section id="wasiliana" className="py-20 lg:py-32 bg-[#e8e8e8] relative">
+    <section id="wasiliana" className="py-12 lg:py-20 bg-[#e8e8e8] relative">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div ref={ref} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className={`text-center mb-12 transition-all duration-700 ${isInView ? "animate-fade-up" : "opacity-0"}`}>
@@ -176,6 +176,7 @@ export default function ContactForm() {
     </section>
   );
 }
+
 
 
 

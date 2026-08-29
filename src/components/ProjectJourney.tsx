@@ -26,7 +26,7 @@ export default function ProjectJourney() {
   const { t, lang } = useLang();
 
   return (
-    <section className="py-20 lg:py-32 bg-[#e8e8e8] relative overflow-hidden">
+    <section className="py-12 lg:py-20 bg-[#e8e8e8] relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div ref={ref} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
@@ -68,7 +68,7 @@ export default function ProjectJourney() {
                   <div className="text-white">{iconMap[step.icon]}</div>
                 </div>
 
-                <div className="flex-1 bg-white border border-[#dcdcdc] rounded-xl px-6 py-4 hover:border-[#cfcfcf] transition-colors">
+                <div className="flex-1 bg-white border border-[#dcdcdc] rounded-xl px-6 py-4 hover:border-[#cfcfcf] hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                   <span className="text-[#555555] font-bold text-xs">
                     HATUA {String(i + 1).padStart(2, "0")}
                   </span>
@@ -88,6 +88,8 @@ export default function ProjectJourney() {
     </section>
   );
 }
+
+
 
 
 

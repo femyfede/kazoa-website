@@ -36,7 +36,7 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
   return (
     <div
       ref={ref}
-      className={`group bg-white border border-[#dcdcdc] rounded-2xl overflow-hidden hover:border-[#cfcfcf] transition-all duration-300 hover:shadow-lg hover:shadow-[#1a1a1a]/5 flex flex-col ${
+      className={`group bg-white border border-[#dcdcdc] rounded-2xl overflow-hidden hover:border-[#cfcfcf] transition-all duration-300 hover:shadow-lg hover:shadow-[#1a1a1a]/5 hover:-translate-y-1 flex flex-col ${
         isInView ? "animate-fade-up" : "opacity-0"
       }`}
       style={{ animationDelay: `${(index % 3) * 90}ms` }}
@@ -83,5 +83,6 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
     </div>
   );
 }
+
 
 

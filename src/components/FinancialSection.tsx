@@ -17,7 +17,7 @@ export default function FinancialSection() {
   const { t, lang } = useLang();
 
   return (
-    <section id="fedha" className="py-20 lg:py-32 bg-[#e8e8e8] relative">
+    <section id="fedha" className="py-12 lg:py-20 bg-[#e8e8e8] relative">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
@@ -51,7 +51,7 @@ export default function FinancialSection() {
           {financialItems.map((item, i) => (
             <div
               key={i}
-              className={`bg-white border border-[#dcdcdc] rounded-2xl p-6 text-center hover:border-[#cfcfcf] hover:bg-[#dcdcdc] transition-all duration-300 group ${
+              className={`bg-white border border-[#dcdcdc] rounded-2xl p-6 text-center hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 100}ms` }}
@@ -84,6 +84,8 @@ export default function FinancialSection() {
     </section>
   );
 }
+
+
 
 
 

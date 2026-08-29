@@ -9,7 +9,7 @@ export default function AboutSection() {
   const { t, lang } = useLang();
 
   return (
-    <section id="about" className="py-20 lg:py-32 bg-[#e8e8e8] relative">
+    <section id="about" className="py-12 lg:py-20 bg-[#e8e8e8] relative">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -36,7 +36,7 @@ export default function AboutSection() {
               {aboutPoints[lang].map((point, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-white border border-[#e4e4e4] hover:border-[#cfcfcf] transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-white border border-[#e4e4e4] hover:border-[#cfcfcf] hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                 >
                   <CheckCircle className="w-5 h-5 text-[#1a1a1a] shrink-0" />
                   <span className="text-sm text-[#333333]">{point}</span>
@@ -67,6 +67,8 @@ export default function AboutSection() {
     </section>
   );
 }
+
+
 
 
 

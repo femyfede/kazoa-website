@@ -8,7 +8,7 @@ export default function ConstructionStages() {
   const { t, lang } = useLang();
 
   return (
-    <section className="py-20 lg:py-24 bg-[#e8e8e8] relative overflow-hidden">
+    <section className="py-12 lg:py-20 bg-[#e8e8e8] relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
@@ -40,7 +40,7 @@ export default function ConstructionStages() {
           {constructionStages[lang].map((stage, i) => (
             <div
               key={i}
-              className={`flex items-center gap-4 p-4 bg-white border border-[#e4e4e4] rounded-xl hover:border-[#cfcfcf] hover:bg-[#dcdcdc] transition-all duration-300 group ${
+              className={`flex items-center gap-4 p-4 bg-white border border-[#e4e4e4] rounded-xl hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-md transition-all duration-300 group ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 60}ms` }}
@@ -60,6 +60,8 @@ export default function ConstructionStages() {
     </section>
   );
 }
+
+
 
 
 
