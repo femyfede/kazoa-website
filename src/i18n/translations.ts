@@ -12,6 +12,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       menu: "Fungua menyu",
       close: "Funga menyu",
       aria: "Muu wa juu",
+      faq: "Maswali",
     },
     hero: {
       tagline: "Ujenzi kwa Mpangilio, Ubora na Uwazi",
@@ -67,6 +68,19 @@ export const translations: Record<Lang, Record<string, any>> = {
       title1: "Kazi za",
       title2: "Ujenzi",
       sub: "Picha za hatua mbalimbali za ujenzi — kutoka msingi hadi makabidhiano",
+    },
+    faq: {
+      eyebrow: "Maswali ya Kawaida",
+      title1: "Maswali",
+      title2: "ya Ujenzi",
+      sub: "Jibu la maswali yanayoulizwa mara kwa mara kabla ya kuanza ujenzi.",
+      items: [
+        { q: "Mfumo huu unafaa kwa aina gani za majengo?", a: "Unafaa kwa majengo ya makazi, biashara na viwandani — kutoka nyumba ndogo hadi majengo makubwa." },
+        { q: "Nawezaje kudhibiti gharama za ujenzi?", a: "Kila hatua ina kiasi kilichokadiriwa (BOQ) kabla ya kuanza kazi, na mabadiliko yanaripotiwa wazi." },
+        { q: "Je, mradi unasimamiwa na mtaalamu?", a: "Ndiyo. Kuna usimamizi wa ubora, vifaa na mafundi katika kila hatua ya ujenzi." },
+        { q: "Mawasiliano yanafanyikaje?", a: "Una mawasiliano ya moja kwa moja na kuripotiwa maendeleo ya kazi mara kwa mara." },
+        { q: "Unatoa huduma za mradi mzima?", a: "Ndiyo, kutoka kupokea wazo la mradi hadi makabidhiano ya mwisho." },
+      ],
     },
     cta: {
       title1: "Una Mpango wa",
@@ -132,6 +146,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       menu: "Open menu",
       close: "Close menu",
       aria: "Main navigation",
+      faq: "FAQ",
     },
     hero: {
       tagline: "Construction with Planning, Quality and Transparency",
@@ -187,6 +202,19 @@ export const translations: Record<Lang, Record<string, any>> = {
       title1: "Our",
       title2: "Construction",
       sub: "Photos of various construction stages — from foundation to handover",
+    },
+    faq: {
+      eyebrow: "Frequently Asked Questions",
+      title1: "Project",
+      title2: "Questions",
+      sub: "Answers to common questions before you start building.",
+      items: [
+        { q: "What types of buildings does this system suit?", a: "It suits residential, commercial and industrial buildings — from small homes to large projects." },
+        { q: "How can I control construction costs?", a: "Every stage has an estimated amount (BOQ) before work starts, and any changes are reported openly." },
+        { q: "Is the project supervised by a professional?", a: "Yes. There is quality, materials and workforce supervision at every construction stage." },
+        { q: "How does communication work?", a: "You get direct communication and regular progress updates on the work." },
+        { q: "Do you deliver the whole project?", a: "Yes, from receiving the project idea to the final handover." },
+      ],
     },
     cta: {
       title1: "Do You Have a",

@@ -1,10 +1,13 @@
-﻿import { images } from "../data/images";
+﻿import { useState } from "react";
+import { images } from "../data/images";
 import { useInView } from "../hooks/useInView";
 import { useLang } from "../i18n/LanguageContext";
+import { X } from "lucide-react";
 
 export default function Gallery() {
   const { ref, isInView } = useInView(0.1);
   const { t } = useLang();
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section className="py-12 lg:py-20 bg-[#e8e8e8] relative">
@@ -30,7 +33,8 @@ export default function Gallery() {
           {images.map((src, i) => (
             <figure
               key={i}
-              className={`mb-4 break-inside-avoid overflow-hidden rounded-xl border border-[#dcdcdc] group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+              onClick={() => setOpen(i)}
+              className={`mb-4 break-inside-avoid overflow-hidden rounded-xl border border-[#dcdcdc] group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 50}ms` }}
@@ -39,16 +43,38 @@ export default function Gallery() {
                 src={src}
                 alt={`Mfano wa ujenzi ${i + 1}`}
                 loading="lazy"
-                className="w-full object-cover  group-hover:scale-105 transition-transform duration-700"
+                className="w-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </figure>
           ))}
         </div>
       </div>
+
+      {open !== null && (
+        <div
+          className="fixed inset-0 z-[60] bg-[#1a1a1a]/90 flex items-center justify-center p-4"
+          onClick={() => setOpen(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white text-[#1a1a1a] flex items-center justify-center hover:bg-[#f2f2f2] transition-colors"
+            aria-label="Funga"
+            onClick={(e) => {
+              e.stopPropagation();
+              setOpen(null);
+            }}
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <img
+            src={images[open]}
+            alt={`Mfano wa ujenzi ${open + 1}`}
+            className="max-w-full max-h-[85vh] rounded-xl border border-[#dcdcdc]"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }
-
-
-
-

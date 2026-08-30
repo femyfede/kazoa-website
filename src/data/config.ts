@@ -17,6 +17,7 @@ export const siteConfig = {
     { label: "Mchakato wa Ujenzi", key: "process", href: "#mchakato" },
     { label: "Mfumo wa Fedha", key: "finance", href: "#fedha" },
     { label: "Ubora na Usalama", key: "quality", href: "#ubora" },
+    { label: "Maswali", key: "faq", href: "#maswali" },
     { label: "Wasiliana Nasi", key: "contact", href: "#wasiliana" },
   ],
 } as const;

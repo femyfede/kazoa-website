@@ -60,7 +60,7 @@ export default function Hero() {
 
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#777777] hover:text-[#1a1a1a] transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#777777] hover:text-[#1a1a1a] transition-colors"
         aria-label={t("hero.scroll")}
       >
         <ChevronDown className="w-8 h-8" />

@@ -6,6 +6,7 @@ import { useLang } from "../i18n/LanguageContext";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
   const { t, lang, setLang } = useLang();
 
   useEffect(() => {
@@ -14,7 +15,31 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const ids = siteConfig.nav.map((n) => n.href.replace("#", ""));
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+    return () => obs.disconnect();
+  }, []);
+
   const toggleLang = () => setLang(lang === "sw" ? "en" : "sw");
+
+  const linkClass = (href: string) =>
+    `relative px-4 py-2 text-sm font-medium transition-all duration-200 ${
+      active === href.replace("#", "")
+        ? "text-[#1a1a1a] font-semibold after:absolute after:left-4 after:right-4 after:-bottom-0.5 after:h-0.5 after:bg-[#1a1a1a]"
+        : "text-[#444444] hover:text-[#1a1a1a]"
+    }`;
 
   return (
     <nav
@@ -37,11 +62,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             {siteConfig.nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="px-4 py-2 text-sm font-medium text-[#444444] hover:text-[#1a1a1a] transition-all duration-200"
-              >
+              <a key={item.href} href={item.href} className={linkClass(item.href)}>
                 {t(`nav.${item.key}`)}
               </a>
             ))}
@@ -85,7 +106,11 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-3 text-base font-medium text-[#444444] hover:text-[#1a1a1a] hover:bg-[#f2f2f2] rounded-lg transition-colors"
+                className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                  active === item.href.replace("#", "")
+                    ? "text-[#1a1a1a] font-semibold bg-[#f2f2f2]"
+                    : "text-[#444444] hover:text-[#1a1a1a] hover:bg-[#f2f2f2]"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {t(`nav.${item.key}`)}
@@ -104,5 +129,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-
