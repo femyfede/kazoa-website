@@ -1,4 +1,9 @@
-﻿@tailwind base;
+﻿:root {
+  --color-dark-green: #2d5a27;
+  --color-isport-grey: #7a7a7a;
+}
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
