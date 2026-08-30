@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { useLang } from "../i18n/LanguageContext";
+import { translations } from "../i18n/translations";
 
 export default function FAQSection() {
-  const { t } = useLang();
-  const items = t("faq.items") as unknown as { q: string; a: string }[];
+  const { t, lang } = useLang();
+  const items = translations[lang].faq.items as { q: string; a: string }[];
   const [open, setOpen] = useState<number | null>(0);
 
   return (
