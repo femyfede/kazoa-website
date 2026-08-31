@@ -40,12 +40,12 @@ export default function ConstructionStages() {
           {constructionStages[lang].map((stage, i) => (
             <div
               key={i}
-              className={`flex items-center gap-4 p-4 bg-[#2d5a27] border border-[#e4e4e4] rounded-xl hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-md transition-all duration-300 group ${
+              className={`flex items-center gap-4 p-4 bg-[#2a2a2a] border border-[#e4e4e4] rounded-xl hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-md transition-all duration-300 group ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 60}ms` }}
             >
-              <div className="w-10 h-10 bg-[#2d5a27] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#eaeaea] transition-colors">
+              <div className="w-10 h-10 bg-[#2a2a2a] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#eaeaea] transition-colors">
                 <span className="text-white font-bold text-sm">
                   {String(i + 1).padStart(2, "0")}
                 </span>
