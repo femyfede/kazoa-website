@@ -36,7 +36,7 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
   return (
     <div
       ref={ref}
-      className={`group bg-[#2d5a27] border border-[#2d5a27]/80 rounded-2xl overflow-hidden hover:border-[#cfcfcf] transition-all duration-300 hover:shadow-lg hover:shadow-[#1a1a1a]/5 hover:-translate-y-1 flex flex-col ${
+      className={`group bg-[#2a2a2a] border border-[#2d5a27]/80 rounded-2xl overflow-hidden hover:border-[#cfcfcf] transition-all duration-300 hover:shadow-lg hover:shadow-[#1a1a1a]/5 hover:-translate-y-1 flex flex-col ${
         isInView ? "animate-fade-up" : "opacity-0"
       }`}
       style={{ animationDelay: `${(index % 3) * 90}ms` }}
@@ -75,7 +75,7 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
         )}
 
         {highlight && (
-<div className="mt-auto px-4 py-3 bg-[#2d5a27] border border-[#2d5a27]/80 rounded-lg">
+<div className="mt-auto px-4 py-3 bg-[#2a2a2a] border border-[#2d5a27]/80 rounded-lg">
             <p className="text-white font-semibold text-xs">{highlight}</p>
           </div>
         )}

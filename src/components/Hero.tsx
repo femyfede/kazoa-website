@@ -14,7 +14,7 @@ export default function Hero() {
         <img
           src={constructionImg}
           alt="Ujenzi wa kitaalamu"
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover"
           loading="eager"
         />
         <div className="absolute inset-0 bg-[#e8e8e8]/55" />
