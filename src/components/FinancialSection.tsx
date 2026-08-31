@@ -28,7 +28,7 @@ export default function FinancialSection() {
           <span className="inline-block text-[#555555] font-semibold text-sm uppercase tracking-widest mb-4">
             {t("finance.eyebrow")}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[text-white] mb-6">
             {t("finance.title1")}{" "}
             <span className="text-gradient">{t("finance.title2")}</span>{" "}
             {t("finance.title3")}
@@ -51,15 +51,15 @@ export default function FinancialSection() {
           {financialItems.map((item, i) => (
             <div
               key={i}
-              className={`bg-white border border-[#dcdcdc] rounded-2xl p-6 text-center hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group ${
+              className={`bg-[#2d5a27] border border-[#dcdcdc] rounded-2xl p-6 text-center hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              <div className="w-14 h-14 bg-[#f2f2f2] rounded-xl flex items-center justify-center text-[#1a1a1a] mx-auto mb-4 group-hover:bg-[#eaeaea] transition-colors">
+              <div className="w-14 h-14 bg-[#2d5a27] rounded-xl flex items-center justify-center text-[text-white] mx-auto mb-4 group-hover:bg-[#eaeaea] transition-colors">
                 {iconMap[item.icon]}
               </div>
-              <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">
+              <h3 className="text-lg font-bold text-[text-white] mb-2">
                 {lang === "en" ? item.titleEn : item.title}
               </h3>
               <p className="text-sm text-[#666666] leading-relaxed">
@@ -74,7 +74,7 @@ export default function FinancialSection() {
             isInView ? "animate-fade-up" : "opacity-0"
           }`}
         >
-          <div className="bg-[#f2f2f2] border border-[#cfcfcf] rounded-2xl p-6 lg:p-8 text-center">
+          <div className="bg-[#2d5a27] border border-[#cfcfcf] rounded-2xl p-6 lg:p-8 text-center">
             <p className="text-[#333333] text-lg leading-relaxed max-w-3xl mx-auto">
               {lang === "en" ? financialNoteEn : financialNote}
             </p>

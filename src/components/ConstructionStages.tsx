@@ -19,7 +19,7 @@ export default function ConstructionStages() {
           <span className="inline-block text-[#555555] font-semibold text-sm uppercase tracking-widest mb-4">
             {t("stages.eyebrow")}
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             {t("stages.title")} <span className="text-gradient">{t("stages.title2")}</span>
           </h2>
           <p className="text-[#777777] max-w-xl mx-auto">
@@ -40,17 +40,17 @@ export default function ConstructionStages() {
           {constructionStages[lang].map((stage, i) => (
             <div
               key={i}
-              className={`flex items-center gap-4 p-4 bg-white border border-[#e4e4e4] rounded-xl hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-md transition-all duration-300 group ${
+              className={`flex items-center gap-4 p-4 bg-[#2d5a27] border border-[#e4e4e4] rounded-xl hover:border-[#cfcfcf] hover:bg-[#dcdcdc] hover:-translate-y-1 hover:shadow-md transition-all duration-300 group ${
                 isInView ? "animate-fade-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${i * 60}ms` }}
             >
-              <div className="w-10 h-10 bg-[#f2f2f2] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#eaeaea] transition-colors">
-                <span className="text-[#1a1a1a] font-bold text-sm">
+              <div className="w-10 h-10 bg-[#2d5a27] rounded-lg flex items-center justify-center shrink-0 group-hover:bg-[#eaeaea] transition-colors">
+                <span className="text-white font-bold text-sm">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <span className="text-[#333333] font-medium text-sm flex-1">
+              <span className="text-white font-medium text-sm flex-1">
                 {stage}
               </span>
             </div>

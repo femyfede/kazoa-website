@@ -36,7 +36,7 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
   return (
     <div
       ref={ref}
-      className={`group bg-white border border-[#dcdcdc] rounded-2xl overflow-hidden hover:border-[#cfcfcf] transition-all duration-300 hover:shadow-lg hover:shadow-[#1a1a1a]/5 hover:-translate-y-1 flex flex-col ${
+      className={`group bg-[#2d5a27] border border-[#2d5a27]/80 rounded-2xl overflow-hidden hover:border-[#cfcfcf] transition-all duration-300 hover:shadow-lg hover:shadow-[#1a1a1a]/5 hover:-translate-y-1 flex flex-col ${
         isInView ? "animate-fade-up" : "opacity-0"
       }`}
       style={{ animationDelay: `${(index % 3) * 90}ms` }}
@@ -58,15 +58,15 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
           <div className="w-10 h-10 bg-[#f2f2f2] rounded-xl flex items-center justify-center text-[#1a1a1a] group-hover:bg-[#eaeaea] transition-colors shrink-0">
             {iconMap[step.id]}
           </div>
-          <h3 className="text-base font-bold text-[#1a1a1a] leading-tight">{title}</h3>
+          <h3 className="text-base font-bold text-white leading-tight">{title}</h3>
         </div>
 
-        <p className="text-[#555555] text-sm leading-relaxed mb-4">{description}</p>
+        <p className="text-[#d4d4d4] text-sm leading-relaxed mb-4">{description}</p>
 
         {details && (
           <ul className="space-y-1.5 mb-4">
             {details.map((detail, i) => (
-              <li key={i} className="flex items-start gap-2 text-xs text-[#666666]">
+              <li key={i} className="flex items-start gap-2 text-xs text-[#8a8a8a]">
                 <span className="w-1.5 h-1.5 bg-[#1a1a1a] rounded-full mt-1.5 shrink-0" />
                 {detail}
               </li>
@@ -75,8 +75,8 @@ export default function ProcessCard({ step, index }: { step: ProcessStep; index:
         )}
 
         {highlight && (
-          <div className="mt-auto px-4 py-3 bg-[#f2f2f2] border border-[#cfcfcf] rounded-lg">
-            <p className="text-[#1a1a1a] font-semibold text-xs">{highlight}</p>
+<div className="mt-auto px-4 py-3 bg-[#2d5a27] border border-[#2d5a27]/80 rounded-lg">
+            <p className="text-white font-semibold text-xs">{highlight}</p>
           </div>
         )}
       </div>

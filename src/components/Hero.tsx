@@ -1,6 +1,6 @@
 ﻿import { ArrowRight, ChevronDown } from "lucide-react";
 import { useLang } from "../i18n/LanguageContext";
-import constructionImg from "../assets/images/construction-01.jpeg";
+import constructionImg from "../assets/images/construction-02.jpeg";
 
 export default function Hero() {
   const { t } = useLang();
