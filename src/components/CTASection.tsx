@@ -1,4 +1,5 @@
-﻿import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
+﻿import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react";
 import { siteConfig } from "../data/config";
 import { useInView } from "../hooks/useInView";
 import { getImage } from "../data/images";
@@ -32,13 +33,13 @@ export default function CTASection() {
             {t("cta.sub")}
           </p>
 
-          <a
-            href="#wasiliana"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1a1a1a] text-white font-semibold rounded-xl hover:bg-[#1a1a1a]/80 transition-all duration-300 hover:-translate-y-0.5 text-lg"
           >
             {t("cta.button")}
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
 
           <div className="rounded-2xl overflow-hidden border border-[#e4e4e4] mt-12 max-w-4xl mx-auto">
             <img

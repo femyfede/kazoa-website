@@ -13,11 +13,10 @@ export const siteConfig = {
     ctaSecondary: "Jifunze Jinsi Tunavyofanya Kazi",
   },
   nav: [
-    { label: "Home", key: "home", href: "#home" },
-    { label: "Mchakato wa Ujenzi", key: "process", href: "#mchakato" },
-    { label: "Mfumo wa Fedha", key: "finance", href: "#fedha" },
-    { label: "Ubora na Usalama", key: "quality", href: "#ubora" },
-    { label: "Maswali", key: "faq", href: "#maswali" },
-    { label: "Wasiliana Nasi", key: "contact", href: "#wasiliana" },
+    { label: "Home", key: "home", href: "/" },
+    { label: "Mchakato wa Ujenzi", key: "process", href: "/process" },
+    { label: "Mifano", key: "gallery", href: "/gallery" },
+    { label: "About", key: "about", href: "/about" },
+    { label: "Wasiliana Nasi", key: "contact", href: "/contact" },
   ],
 } as const;

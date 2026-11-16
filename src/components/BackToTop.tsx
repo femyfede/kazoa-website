@@ -18,7 +18,7 @@ export default function BackToTop() {
     <button
       onClick={toTop}
       aria-label={t("back")}
-      className={`fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full border border-[#1a1a1a]/30 bg-[#1a1a1a] text-white flex items-center justify-center transition-all duration-300 hover:bg-[#333333] ${
+      className={`fixed bottom-20 right-5 z-50 w-12 h-12 rounded-full border border-[#23483c]/30 bg-[#23483c] text-white flex items-center justify-center transition-all duration-300 hover:bg-[#19392f] ${
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
@@ -26,5 +26,4 @@ export default function BackToTop() {
     </button>
   );
 }
-
 

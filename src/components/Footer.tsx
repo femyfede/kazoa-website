@@ -1,4 +1,5 @@
-﻿import { HardHat, Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { HardHat } from "lucide-react";
 import { siteConfig } from "../data/config";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -7,61 +8,47 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#e8e8e8] border-t border-[#dcdcdc] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#1a1a1a] rounded-lg flex items-center justify-center">
-                <HardHat className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-[#1a1a1a]">{siteConfig.name}</span>
-            </div>
-            <p className="text-[#777777] max-w-sm leading-relaxed mb-6">{t("footer.desc")}</p>
-            <div className="space-y-2">
-              <a href={`tel:${siteConfig.phone}`} className="flex items-center gap-2 text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">
-                <Phone className="w-4 h-4" />{siteConfig.phone}
-              </a>
-              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">
-                <Mail className="w-4 h-4" />{siteConfig.email}
-              </a>
-              <div className="flex items-center gap-2 text-sm text-[#666666]">
-                <MapPin className="w-4 h-4" />{siteConfig.location}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-[#1a1a1a] font-semibold mb-4">{t("footer.quick")}</h3>
-            <ul className="space-y-2">
-              {siteConfig.nav.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">
-                    {t(`nav.${item.key}`)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-[#1a1a1a] font-semibold mb-4">{t("footer.services")}</h3>
-            <ul className="space-y-2">
-              <li><a href="#mchakato" className="text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">{t("footer.sProcess")}</a></li>
-              <li><a href="#fedha" className="text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">{t("footer.sFinance")}</a></li>
-              <li><a href="#ubora" className="text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">{t("footer.sQuality")}</a></li>
-              <li><a href="#wasiliana" className="text-sm text-[#666666] hover:text-[#1a1a1a] transition-colors">{t("footer.sContact")}</a></li>
-            </ul>
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <Link to="/" className="brand">
+            <span className="brand-mark"><HardHat size={20} strokeWidth={1.8} /></span>
+            <span>{siteConfig.name}<i>.</i></span>
+          </Link>
+          <p>{t("footer.desc")}</p>
+          <div className="footer-contact">
+            <a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
+            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#dcdcdc] text-center">
-          <p className="text-sm text-[#777777]">&copy; {year} {siteConfig.name}. {t("footer.copy")}</p>
+        <div className="footer-column">
+          <h3>{t("footer.quick")}</h3>
+          <ul>
+            {siteConfig.nav.map((item) => (
+              <li key={item.href}>
+                <Link to={item.href}>{t(`nav.${item.key}`)}</Link>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <div className="footer-column">
+          <h3>{t("footer.services")}</h3>
+          <ul>
+            <li><Link to="/process">{t("footer.sProcess")}</Link></li>
+            <li><Link to="/finance">{t("footer.sFinance")}</Link></li>
+            <li><Link to="/quality">{t("footer.sQuality")}</Link></li>
+            <li><Link to="/contact">{t("footer.sContact")}</Link></li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        &copy; {year} {siteConfig.name}. {t("footer.copy")}
       </div>
     </footer>
   );
 }
-
-
-

@@ -1,44 +1,36 @@
-﻿import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import AboutSection from "./components/AboutSection";
-import ProcessTimeline from "./components/ProcessTimeline";
-import ConstructionStages from "./components/ConstructionStages";
-import QualitySafety from "./components/QualitySafety";
-import FinancialSection from "./components/FinancialSection";
-import ProjectJourney from "./components/ProjectJourney";
-import Gallery from "./components/Gallery";
-import FAQSection from "./components/FAQSection";
-import CTASection from "./components/CTASection";
-import ContactForm from "./components/ContactForm";
-import Footer from "./components/Footer";
-import ScrollProgress from "./components/ScrollProgress";
-import BackToTop from "./components/BackToTop";
-import FloatingContact from "./components/FloatingContact";
+﻿import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ProcessPage from "./pages/ProcessPage";
+import StagesPage from "./pages/StagesPage";
+import QualityPage from "./pages/QualityPage";
+import FinancePage from "./pages/FinancePage";
+import JourneyPage from "./pages/JourneyPage";
+import GalleryPage from "./pages/GalleryPage";
+import FAQPage from "./pages/FAQPage";
+import ContactPage from "./pages/ContactPage";
 import { LanguageProvider } from "./i18n/LanguageContext";
 
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-[#e8e8e8]">
-        <ScrollProgress />
-        <Navbar />
-        <main>
-          <Hero />
-          <AboutSection />
-          <ProcessTimeline />
-          <ConstructionStages />
-          <QualitySafety />
-          <FinancialSection />
-          <ProjectJourney />
-          <Gallery />
-          <FAQSection />
-          <CTASection />
-          <ContactForm />
-        </main>
-        <Footer />
-        <BackToTop />
-        <FloatingContact />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="process" element={<ProcessPage />} />
+            <Route path="stages" element={<StagesPage />} />
+            <Route path="quality" element={<QualityPage />} />
+            <Route path="finance" element={<FinancePage />} />
+            <Route path="journey" element={<JourneyPage />} />
+            <Route path="gallery" element={<GalleryPage />} />
+            <Route path="faq" element={<FAQPage />} />
+            <Route path="contact" element={<ContactPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </LanguageProvider>
   );
 }
