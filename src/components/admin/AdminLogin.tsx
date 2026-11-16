@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, Eye, EyeOff, Loader2, Building2 } from 'lucide-react';
 import { useAuth } from './AuthContext';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 export function AdminLogin() {
   const navigate = useNavigate();

@@ -2,23 +2,12 @@ import { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard,
-  Home,
   FileText,
-  List,
   Building2,
-  Hammer,
-  Shield,
-  DollarSign,
-  MapPin,
-  Image,
-  HelpCircle,
-  MessageSquare,
-  PenTool,
   Users,
   Settings,
   LogOut,
   Menu,
-  X,
   ChevronLeft,
   ChevronRight,
   Building,
@@ -28,7 +17,7 @@ import {
   User,
 } from 'lucide-react';
 import { useAuth } from './AuthContext';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
